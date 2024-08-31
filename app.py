@@ -43,18 +43,19 @@ def predict(dependents, education , self_employed, annual_income, loan_amount, l
 
 # Streamlit app
 st.title("Loan Approval Prediction")
-st.header("Enter Loan Details")
+st.header("Enter Your Information")
+st.text("Currency: Inidian Rupee. Symbol: ₹")
 dependents = st.slider("Number of dependents", min_value=0, max_value=5, value=0, step=1)
-education = int(st.selectbox("Education" ,[0 , 1]))
-self_employed = int(st.selectbox("self_employed" , [0 , 1]))
-annual_income = st.slider("Annual Income", min_value=200000, max_value=9900000, value=200000, step=1000)
-loan_amount = st.slider("Loan Amount" , min_value=300000, max_value=39500000, value=300000, step=10000)
-loan_term = st.slider("Loan Term", min_value=2, max_value=20, value=2, step=1)
-credit_score = st.slider("Credit Score" , min_value=300, max_value=900, value=300, step=1)
-residential_av = st.slider("Residential AV", min_value=-100000, max_value=29100000, value=0, step=10000)
-commercial_av = st.slider("Commerical AV", min_value=0, max_value=19400000, value=0, step=1000)
-luxury_av = st.slider("Luxury AV", min_value=300000, max_value=39200000, value=300000, step=10000)
-bank_av = st.slider("Bank AV", min_value=0, max_value=14700000, value=0, step=10000)
+education = int(st.selectbox("Education (1=Yes, 0=No)" ,[0 , 1]))
+self_employed = int(st.selectbox("Self Employment (1=Yes/Self employed, 0=No/Employed)" , [0 , 1]))
+annual_income = st.slider("Annual Income (₹)", min_value=200000, max_value=9900000, value=200000, step=1000)
+loan_amount = st.slider("Loan Amount (₹)" , min_value=300000, max_value=39500000, value=300000, step=10000)
+loan_term = st.slider("Loan Term (in Year)", min_value=2, max_value=20, value=2, step=1)
+credit_score = st.slider("Cibil Credit Score" , min_value=300, max_value=900, value=300, step=1)
+residential_av = st.slider("Residential Assets Value in (₹)", min_value=-100000, max_value=29100000, value=0, step=10000)
+commercial_av = st.slider("Commerical Assets Value (₹)", min_value=0, max_value=19400000, value=0, step=1000)
+luxury_av = st.slider("Luxury Assets Value (₹)", min_value=300000, max_value=39200000, value=300000, step=10000)
+bank_av = st.slider("Bank Asset Value (₹)", min_value=0, max_value=14700000, value=0, step=10000)
 
 
 input_data = pd.DataFrame({
