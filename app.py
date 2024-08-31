@@ -2,7 +2,6 @@
 
 import streamlit as st
 import joblib
-import xgboost as xgb
 import pandas as pd
 
 
