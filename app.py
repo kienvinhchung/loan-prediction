@@ -15,7 +15,7 @@ numerical_cols = ['annual_income', 'loan_amount', 'loan_term', 'credit_score',
 
 
 def predict(dependents, education , self_employed, annual_income, loan_amount, loan_term, credit_score, 
-            residential_av, commercial_assets_value, luxury_av, bank_av):
+            residential_av, commercial_av, luxury_av, bank_av):
     test_df = pd.DataFrame(columns = ['dependents', 'education', 'self_employed', 'annual_income', 
                                       'loan_amount', 'loan_term', 'credit_score', 'residential_av', 
                                       'commercial_av', 'luxury_av', 'bank_av'])
